@@ -18,7 +18,8 @@ module.exports = {
           var split = country.split(" ");
           var fullyCapitalized = '';
           _.forEach(split, function(countryWord){
-            fullyCapitalized += countryWord.slice(0,1).toUpperCase() + countryWord.slice(1).toLowerCase();
+            //For the countries that have two names such as United States, a space is required in between both names
+            fullyCapitalized +=' '+countryWord.slice(0,1).toUpperCase()+ countryWord.slice(1).toLowerCase();
           });
           return fullyCapitalized;
         } else {
